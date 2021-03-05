@@ -7,7 +7,7 @@ import {
     SET_ALERT
 } from './actionTypes';
 
-import AuthService from '../services/auth.service';
+import * as AuthService from '../services/auth.service';
 
 // REGISTER =====================
 export const register = (username, email, password) => (dispatch) => {
@@ -48,7 +48,7 @@ export const login = (username, password) => (dispatch) => {
             payload: {user:data}
         });
         return Promise.resolve()
-    }
+    },
     (error) => {
         const message = (error.response &&
             error.response.data &&

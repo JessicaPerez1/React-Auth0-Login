@@ -17,16 +17,16 @@ const login = (username, password) => {
         password
     }).then((response) => {
     // if token exists, save to localStorage
-    if (response.data.accessToken) {
-        localStorage.setItem('user', JSON.stringify(response.data));
-    }
-    return response.data;
-});
+            if (response.data.accessToken) {
+            localStorage.setItem('user', JSON.stringify(response.data));
+        }
+        return response.data;
+    });
 };
 
 //when logout, remove from localstorage
 const logout = () => {
-    localStorage.removeItem('user')
+    localStorage.removeItem('user');
 };
 export {
     register,
