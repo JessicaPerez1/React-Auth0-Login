@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Navigation = () => {
     const history = useHistory()
-    // const { user: currentUser } = useSelector((state) => state.auth)
+    const { user: currentUser } = useSelector((state) => state.authReducer)
     const dispatch = useDispatch()
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
 
     const logOut = () => { dispatch(logout());
   };
