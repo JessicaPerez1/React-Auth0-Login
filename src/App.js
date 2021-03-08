@@ -3,8 +3,9 @@ import { Router, Route, Switch } from 'react-router-dom'
 import {  history } from './helpers/history'
 
 import Login from './components/Login'
-import Register from './components/Register'
+import Logout from './components/Logout'
 import Home from './components/Home'
+import Profile from './components/Profile'
 import Navigation from './components/Navigation'
 import Products from './components/Products'
 
@@ -22,8 +23,11 @@ const App = () => {
         <Route exact path='/login'>
           <Login />
         </Route>
-        <Route exact path='/register'>
-          <Register />
+        <Route exact path='/logout'>
+          <Logout />
+        </Route>
+        <Route exact path='/profile'>
+          <Profile />
         </Route>
         <Route exact path='/products'>
           <Products />
