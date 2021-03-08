@@ -3,13 +3,7 @@ import { Link } from 'react-router-dom';
 // import { connect } from 'react-redux';
 // import { logout } from '../actions/index'
 
-const Navigation = ({ auth }) => {
-//     const history = useHistory()
-
-//     const logOut = (e) => {
-//         e.preventDefault();
-//         logout()
-//   };
+const Navigation = () => {
 
     return (
         <nav className='navbar-container'>
@@ -18,16 +12,7 @@ const Navigation = ({ auth }) => {
             <Link to='/login'> Login</Link>
             {/* if is logged in show the logout button */}
             <Link to='/logout'> Logout</Link>
-            {/* { auth ? (
-                <button
-                className='logout-btn'
-                onClick={() => {
-                    logOut();
-                    history.push('/')
-                }}>Logout</button>
-            ) : (
-                <Link to='/login'>Login</Link>
-            ) } */}
+            <Link to='/profile'> Profile</Link>
             <Link to='/products'> Products</Link>
         </nav>
     )

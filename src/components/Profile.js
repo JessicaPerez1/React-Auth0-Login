@@ -1,17 +1,22 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 
-// import { useHistory } from 'react-router-dom';
+import './profileStyle.css';
 
 const Profile = () => {
 
-    const { user } = useAuth0();
+    const { user, isAuthenticated } = useAuth0();
 
     return (
-        <div className="profile-container">
-            {JSON.stringify(user, null, 2)}
-        </div>
-
+        <React.Fragment>
+            {/* only show the content below IF the IS authenticated */}
+        { isAuthenticated && 
+         <div className='profile-container'>
+             Welcome {JSON.stringify(user.nickname)}
+              {/* {JSON.stringify(user, null, 2)} */}
+          </div>
+        }  
+        </React.Fragment>
     )
 }
 export default Profile;
