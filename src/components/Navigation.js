@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
-import { logout } from '../services/auth.service';
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logout } from '../actions/index'
 
-const Navigation = () => {
+const Navigation = ({ auth }) => {
     const history = useHistory()
-    const { user: currentUser } = useSelector((state) => state.authReducer)
-    const dispatch = useDispatch()
-    // const [show, setShow] = useState(false);
 
-    const logOut = () => { dispatch(logout());
+    const logOut = (e) => {
+        e.preventDefault();
+        logout()
   };
+
     return (
         <nav className='navbar-container'>
             <Link to='/'> Home</Link>
-            { currentUser ? (
+            { auth ? (
                 <button
                 className='logout-btn'
                 onClick={() => {
@@ -24,8 +24,15 @@ const Navigation = () => {
             ) : (
                 <Link to='/login'>Login</Link>
             ) }
+            <Link to='/products'> Products</Link>
         </nav>
     )
 }
 
-export default Navigation
+function mapStateToProps(state) {
+  return {
+    auth: state.isAuthenticated
+  };
+}
+
+export default connect(mapStateToProps, { logout })(Navigation);

@@ -1,28 +1,19 @@
-import React, { useState, useRef } from 'react'
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from 'react'
+import PropTypes from 'prop-types';
+import { connect } from "react-redux";
+import { useHistory, withRouter } from 'react-router-dom';
 
 // import Form from 'react-validation/build/form';
 // import Input from 'react-validation/build/input';
 // import CheckButton from 'react-validation/build/button';
 
-import { register, login } from '../actions/authActions'
+import { login } from '../actions/index'
 
-const Login = () => {
-    const userNameRef = useRef();
-    const passwordRef = useRef();
+const Login = ({ login }) => {
+    const history = useHistory();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
-    const [successful, setSuccessful] = useState(false)
-    const [loading, setLoading] = useState(false);
-
-    const [isMember, setMember] = useState(true);
-    
-    const { isLoggedIn } = useSelector(state => state.authReducer);
-    const { message } = useSelector(state => state.messageReducer);
-
-    const dispatch = useDispatch();
 
     const onChangeUsername = (event) => {
       const username = event.target.value;
@@ -34,19 +25,18 @@ const Login = () => {
       setPassword(password);
     };
 
-    const onChangeEmail = (event) => {
-      const email = event.target.value;
-      setEmail(email);
-    };
-    const handleSubmit = (e) => {
+    const handleSubmit = (e ) => {
       e.preventDefault();
-
-      setLoading(true);
+        return login(username, password).then((res) => {
+            history.push('/products')
+          },
+          (err) => {
+            debugger
+          })  
     };
 
     return (
         <div className="login-container">
-            {/* h1 is SIGN IN if its an existing member, it's REGISTER if not a member yet */}
             <form
             className='login-form' onSubmit={handleSubmit}
             >
@@ -70,10 +60,18 @@ const Login = () => {
                     onChange={onChangePassword}
                     />
                 </div>
-                
-            </form>
+            <button
+                type='button'
+                className='form-control-btn'
+                > LOGIN
+            </button>
+        </form>
         </div>
     )
 }
 
-export default Login
+Login.propTypes = {
+  login: PropTypes.func.isRequired
+}
+
+export default withRouter(connect(null, { login })(Login));

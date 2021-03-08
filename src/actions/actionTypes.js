@@ -1,16 +1,13 @@
-const REGISTER_SUCCESS = 'register success';
-const REGISTER_FAIL = 'register fail';
-const LOGIN_SUCCESS = 'login success';
-const LOGIN_FAIL = 'login fail';
+const REGISTER = 'register';
+const LOGIN = 'login';
 const LOGOUT = 'logout';
 
 export {
-    REGISTER_SUCCESS,
-    REGISTER_FAIL,
-    LOGIN_SUCCESS,
-    LOGIN_FAIL,
+    REGISTER,
+    LOGIN,
     LOGOUT
 }
 
+export const LOADING = 'loading';
 export const SET_ALERT = 'set alert';
 export const CLEAR_ALERT = 'clear alert';
