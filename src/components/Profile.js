@@ -3,12 +3,13 @@ import { useAuth0 } from '@auth0/auth0-react'
 
 const Profile = () => {
   const { user } = useAuth0();
+  const { name } = user;
   return (
     <div className='profile-container'>
-        <div className='greetings'>
-            Hello, {JSON.stringify(user.nickname)}
+        <h1 className='greetings'>
+            Hello, {name}
             {/* {JSON.stringify(user, null, 2)} */}
-        </div>
+        </h1>
         <h4>This page will show user info when logged in :)</h4>
     </div>
     )
