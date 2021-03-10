@@ -1,14 +1,14 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 
+import './Navigation.scss'
+
 const Login = () => {
 
-    const { loginWithRedirect, isAuthenticated } = useAuth0();
+    const { loginWithRedirect } = useAuth0();
 
     return (
-      <React.Fragment>
-      { !isAuthenticated && (
-        <div className="login-container">
+        <div className="container">
             <button
                 type='button'
                 className='form-control-btn'
@@ -16,8 +16,6 @@ const Login = () => {
                 > LOGIN
             </button>
         </div>
-      )}
-    </React.Fragment>
     )
 }
 

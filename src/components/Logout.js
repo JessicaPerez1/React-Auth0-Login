@@ -5,12 +5,10 @@ import { useAuth0 } from '@auth0/auth0-react'
 
 const Logout = () => {
 
-    const { logout, isAuthenticated } = useAuth0();
+    const { logout } = useAuth0();
 
     return (
-    <React.Fragment>
-    { isAuthenticated && (
-        <div className="logout-container">
+        <div className="container">
             <button
                 type='button'
                 className='form-control-btn'
@@ -19,8 +17,6 @@ const Logout = () => {
                 > LOGOUT
             </button>
         </div>
-        )}
-    </React.Fragment>
     )
 }
 export default Logout;
