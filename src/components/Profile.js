@@ -12,7 +12,7 @@ const Profile = () => {
             Hello, {name}
             {/* {JSON.stringify(user, null, 2)} */}
         </h1>
-        <h4>This page will show user info when logged in :)</h4>
+        <h4>This page will sho when logged in :)</h4>
     </div>
     )
 }
