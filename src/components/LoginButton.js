@@ -3,18 +3,19 @@ import { useAuth0 } from '@auth0/auth0-react'
 
 import './Navigation.scss';
 
-const Login = () => {
+const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
+
   return (
     <div className="container">
       <button
         type='button'
         className='form-control-btn'
         onClick ={() => loginWithRedirect()}
-        > LOGIN
+        > Log in
       </button>
     </div>
   )
 }
 
-export default Login;
+export default LoginButton;
