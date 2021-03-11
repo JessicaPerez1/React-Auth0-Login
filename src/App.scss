@@ -1,12 +1,22 @@
 $font: "IM Fell French Canon", serif;
-$primary-color: #ffffff;
+$main-color: #282c34;
+$nav-color: #ffffff;
 
-html {
-  color: $primary-color;
+:root {
+  width: 100vw;
+  height: 100vw;
+}
+body {
+  color: $main-color;
   font-family: $font;
   font-size: 90%;
   text-align: center;
-  width: 100vw;
-  min-height: 100vh;
-  background-color: #282c34;
+  background-color: white;
+}
+.main-content {
+  align-items: center;
+  max-width: 70rem;
+  margin: 0 auto;
+  margin-top: 6rem;
+  padding: 20px 40px;
 }

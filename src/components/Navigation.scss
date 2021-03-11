@@ -1,14 +1,22 @@
 @use 'App';
 
 nav {
+  width: 100vw;
+  height: 60px;
+  background-color: #282c34;
   font-size: 1.5rem;
-  margin: 30px 30px;
-  padding: 0px 50px;
+  margin-bottom: 20px;
+  padding: 1rem 0;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 nav {
   ul {
+    margin: 0;
+    padding: 0rem 5rem 0rem 5rem;
     display: flex;
     justify-content: space-around;
     list-style: none;
