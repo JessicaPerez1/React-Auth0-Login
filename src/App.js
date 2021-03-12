@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Navigation from './components/Navigation'
 import Loading from './components/Loading'
+import ProtectedRoute from './auth/Protected-route'
 
 import { useAuth0 } from '@auth0/auth0-react'
 import './App.scss';
@@ -21,9 +22,7 @@ const App = () => {
         <Route exact path='/'>
           <Home />
         </Route>
-        <Route exact path='/profile'>
-          <Profile />
-        </Route>
+        <ProtectedRoute path="/profile" component={Profile} />
       </Switch>
       </React.Fragment>
   );
