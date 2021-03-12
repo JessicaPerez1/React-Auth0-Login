@@ -5,13 +5,14 @@ import './Loading.scss';
 
 const Loading = () => {
     return(
-        <div className='loading-gif'>
+        <div className='gif-container'>
             <h1>Loading...</h1>
             <img 
-            src={loading}
-            alt='loading gif'/>
+              className='loading-gif'
+              src={loading}
+              alt='loading gif'/>
         </div>
     )
 }
 
-export default Loading
+export default Loading;
