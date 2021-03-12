@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import Home from './components/Home'
-import Profile from './components/Profile'
+import Home from './pages/Home'
+import Profile from './pages/Profile'
 import Navigation from './components/Navigation'
 
 import { useAuth0 } from '@auth0/auth0-react'
